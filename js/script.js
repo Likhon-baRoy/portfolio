@@ -43,3 +43,38 @@ themeToggle.addEventListener('click', () => {
         themeToggle.textContent = '🌙';
     }
 });
+
+// ===== Load Projects from JSON =====
+async function loadProjects() {
+    try {
+        const response = await fetch('projects.json');
+        const projects = await response.json();
+
+        const projectContainer = document.querySelector('.project-list');
+
+        projects.forEach((project, index) => {
+            const card = document.createElement('div');
+            card.classList.add('project-card', 'hidden');
+
+            card.innerHTML = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <small>${project.tech.join(' • ')}</small>
+            `;
+
+            projectContainer.appendChild(card);
+
+            // animate after short delay
+            setTimeout(() => {
+                card.classList.remove('hidden');
+                card.classList.add('show');
+            }, index * 150);
+        });
+
+    } catch (error) {
+        console.error('Error loading projects:', error);
+    }
+}
+
+loadProjects();
+

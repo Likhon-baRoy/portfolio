@@ -1,0 +1,12 @@
+[
+  {
+    "title": "ERP Module Demo",
+    "description": "Custom module built using CodeIgniter and MySQL.",
+    "tech": ["PHP", "CodeIgniter", "MySQL"]
+  },
+  {
+    "title": "Task Manager (JS)",
+    "description": "Vanilla JavaScript task management application.",
+    "tech": ["JavaScript", "LocalStorage", "DOM"]
+  }
+]
