@@ -255,3 +255,38 @@ body.dark .theme-btn:hover {
     background: rgba(0, 0, 0, 0.05);
 }
 
+/* ===== Filter Buttons ===== */
+.project-filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    border: 1px solid #e5e7eb;
+    background: none;
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+body.dark .filter-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-dark); /* ensures light text */
+}
+
+body.dark .filter-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
