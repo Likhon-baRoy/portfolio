@@ -52,6 +52,13 @@ function renderProjects(projects) {
         card.classList.add('project-card', 'hidden');
 
         card.innerHTML = `
+            <div class="project-image">
+                <img src="${project.image}" alt="${project.title}" />
+                <div class="overlay">
+                    <button class="view-details" data-index="${index}">View Details</button>
+                </div>
+            </div>
+
             <h3>${project.title}</h3>
             <p>${project.description}</p>
 
@@ -99,6 +106,28 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 });
 
 loadProjects();
+
+// Project Modal Logic
+document.addEventListener('click', function(e) {
+
+    if (e.target.classList.contains('view-details')) {
+        const index = e.target.dataset.index;
+        const project = allProjects[index];
+
+        document.getElementById('modal-title').textContent = project.title;
+        document.getElementById('modal-description').textContent = project.details;
+
+        document.getElementById('project-modal').style.display = 'flex';
+    }
+
+    if (e.target.classList.contains('close-modal')) {
+        document.getElementById('project-modal').style.display = 'none';
+    }
+
+    if (e.target.id === 'project-modal') {
+        document.getElementById('project-modal').style.display = 'none';
+    }
+});
 
 
 // ===============================

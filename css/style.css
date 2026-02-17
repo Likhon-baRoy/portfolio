@@ -346,6 +346,77 @@ body.dark .project-btn.outline {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Project image with overlay */
+.project-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.project-image img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.project-image:hover .overlay {
+    opacity: 1;
+}
+
+.view-details {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Modal of project details */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+body.dark .modal-content {
+    background: #1e293b;
+}
+
 
 /* =====================================================
    9. SCROLL ANIMATIONS

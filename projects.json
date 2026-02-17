@@ -4,7 +4,18 @@
     "description": "Custom module built using CodeIgniter and MySQL.",
     "tech": ["PHP", "CodeIgniter", "MySQL"],
     "github": "https://github.com/yourusername/erp-demo",
-    "demo": "https://your-demo-link.com"
+    "demo": "https://your-demo-link.com",
+    "image": "assets/images/erp.png",
+    "details": "This module handles member booking, payments, reporting and ERP integration logic."
+  },
+  {
+    "title": "University Hall Management System",
+    "description": "🏨 A Hall Management System made originally for University based on PHP, Laravel 11, HTML5, CSS3, JS, MySQL etc.",
+    "tech": ["Laravel", "PHP", "MySQL"],
+    "github": "https://github.com/Likhon-baRoy/Hall-Management-System",
+    "demo": "https://github.com/Likhon-baRoy/Hall-Management-System",
+    "image": "assets/images/hall.png",
+    "details": "This is a project of a dormitory management system website designed to improve the efficiency and effectiveness of managing dormitories or student housing."
   },
   {
     "title": "Task Manager",
