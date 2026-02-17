@@ -49,17 +49,28 @@ function renderProjects(projects) {
 
     projects.forEach((project, index) => {
         const card = document.createElement('div');
-        card.classList.add('project-card');
+        card.classList.add('project-card', 'hidden');
 
         card.innerHTML = `
             <h3>${project.title}</h3>
             <p>${project.description}</p>
-            <small>${project.tech.join(' • ')}</small>
+
+            <div class="tech-badges">
+                ${project.tech.map(tech => 
+                    `<span class="badge">${tech}</span>`
+                ).join('')}
+            </div>
+
+            <div class="project-links">
+                <a href="${project.github}" target="_blank" class="project-btn">GitHub</a>
+                <a href="${project.demo}" target="_blank" class="project-btn outline">Live Demo</a>
+            </div>
         `;
 
         projectContainer.appendChild(card);
 
         setTimeout(() => {
+            card.classList.remove('hidden');
             card.classList.add('show');
         }, index * 150);
     });
