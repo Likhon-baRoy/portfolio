@@ -117,3 +117,38 @@ const observer = new IntersectionObserver((entries, observer) => {
 });
 
 sections.forEach(section => observer.observe(section));
+
+
+// ===============================
+// Hero Rotating Specialization
+// ===============================
+
+const rotatingText = document.getElementById("rotating-text");
+
+const texts = [
+    "Scalable Backend Systems",
+    "ERP Solutions",
+    "Modern JavaScript Applications",
+    "Clean & Maintainable Code"
+];
+
+let currentIndex = 0;
+
+// Initial state
+rotatingText.textContent = texts[currentIndex];
+rotatingText.classList.add("slide-in");
+
+function rotateText() {
+    rotatingText.classList.remove("slide-in");
+    rotatingText.classList.add("slide-out");
+
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % texts.length;
+        rotatingText.textContent = texts[currentIndex];
+
+        rotatingText.classList.remove("slide-out");
+        rotatingText.classList.add("slide-in");
+    }, 600);
+}
+
+setInterval(rotateText, 4000);
