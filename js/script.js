@@ -140,8 +140,15 @@ function renderSlider(projects) {
 ===================================================== */
 
 function updateSlider() {
-
     const track = document.querySelector('.project-track');
+
+    track.style.opacity = 0.8;
+
+    setTimeout(() => {
+        track.style.transform = `translateX(-${sliderIndex * 100}%)`;
+        track.style.opacity = 1;
+    }, 100);
+    
     const dots = document.querySelectorAll('.slider-dots span');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -192,6 +199,16 @@ const sliderWrapper = document.querySelector('.project-slider-wrapper');
 
 sliderWrapper.addEventListener('mouseenter', stopAutoSlide);
 sliderWrapper.addEventListener('mouseleave', startAutoSlide);
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+        document.getElementById('next-btn').click();
+    }
+    if (e.key === 'ArrowLeft') {
+        document.getElementById('prev-btn').click();
+    }
+});
 
 
 /* =====================================================

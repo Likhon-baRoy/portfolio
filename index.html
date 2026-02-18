@@ -7,6 +7,8 @@
     <title>Your Name | Software Developer</title>
 
     <link rel="stylesheet" href="css/style.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
@@ -20,8 +22,14 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="https://drive.google.com/your-cv-link"
+                    target="_blank"
+                    class="resume-link">
+                    Resume
+                </a></li>
             </ul>
             <button id="theme-toggle" class="theme-btn">🌙</button>
         </nav>
@@ -43,39 +51,149 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about container">
-        <h2>About Me</h2>
-        <p>
-            I am currently working as a Junior Software Developer maintaining
-            and extending ERP systems using PHP (CodeIgniter), MySQL,
-            HTML, CSS, and JavaScript.
-            I am passionate about improving my engineering skills
-            and building scalable applications.
-        </p>
+    <section id="about" class="section container">
+        <h2 class="section-title">
+            <span>About Me</span>
+        </h2>
+    
+        <div class="about-card">
+            <blockquote>
+                “The quiet architect of systems and spirit.”
+            </blockquote>
+    
+            <p>
+                I’m a passionate software developer focused on enterprise
+                applications, ERP systems, backend architecture, and scalable solutions.
+            </p>
+    
+            <p>
+                Currently working with PHP, CodeIgniter, MySQL, and modern JS —
+                building reliable internal systems.
+            </p>
+        </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills container">
-        <h2>Skills</h2>
+        <h2>Tech Stack</h2>
 
-        <div class="skills-grid">
-            <div class="skill-card hidden">
-                <h3>Backend</h3>
-                <p>PHP, CodeIgniter, MySQL, REST API</p>
+        <div class="tech-grid">
+        
+            <div class="tech-item">
+                <i class="devicon-cplusplus-plain colored"></i>
+                <span>C++</span>
             </div>
 
-            <div class="skill-card hidden">
-                <h3>Frontend</h3>
-                <p>HTML, CSS, JavaScript</p>
+            <div class="tech-item">
+                <i class="devicon-csharp-plain colored"></i> 
+                <span>C#</span>
             </div>
 
-            <div class="skill-card hidden">
-                <h3>Tools</h3>
-                <p>Git, GitHub, Linux</p>
+            <div class="tech-item">
+                <i class="devicon-dotnetcore-plain colored"></i> 
+                <span>.NET Core</span>
+            </div>
+            
+            <div class="tech-item">
+                <i class="devicon-bootstrap-plain colored"></i>
+                <span>Bootstrap</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-vscode-plain colored"></i>
+                <span>VS Code</span>
+            </div>
+            
+            <div class="tech-item">
+                <i class="devicon-emacs-original colored"></i>
+                <span>Emacs</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-bash-plain colored"></i>
+                <span>Bash</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-vim-plain colored"></i>
+                <span>Vim</span>
+            </div>
+            
+            <div class="tech-item">
+                <i class="devicon-docker-plain colored"></i>
+                <span>Docker</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-postgresql-plain colored"></i>
+                <span>PostgreSQL</span>
+            </div>
+            
+            <div class="tech-item">
+                <i class="devicon-css3-plain colored"></i> 
+                <span>CSS3</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-html5-plain colored"></i>
+                <span>HTML5</span>
+            </div>
+
+                <div class="tech-item">
+                <i class="devicon-laravel-plain colored"></i>
+                <span>Laravel</span>
+            </div>
+            
+            <div class="tech-item">
+                <i class="devicon-php-plain colored"></i>
+                <span>PHP</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-javascript-plain colored"></i>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-mysql-plain colored"></i>
+                <span>MySQL</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-git-plain colored"></i>
+                <span>Git</span>
+            </div>
+
+            <div class="tech-item">
+                <i class="devicon-linux-plain colored"></i>
+                <span>Linux</span>
             </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="section container alt">
+        <h2 class="section-title">
+            <span>Experience</span>
+        </h2>
+        
+        <div class="experience-list">
+        
+            <div class="experience-card">
+                <h3>Junior Software Developer</h3>
+                <span class="experience-meta">
+                    Your Company • 2023 – Present
+                </span>
+                <ul>
+                    <li>Maintained ERP systems</li>
+                    <li>Optimized SQL queries</li>
+                    <li>Built reporting modules</li>
+                </ul>
+            </div>
+        
+        </div>
+    </section>
+    
     <!-- Projects Section -->
     <section id="projects" class="projects container">
         <h2>Projects</h2>
@@ -99,14 +217,27 @@
         </div>
 
         <div class="slider-dots" id="slider-dots"></div>
-
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact container">
-        <h2>Contact</h2>
-        <p>Email: your@email.com</p>
-        <p>GitHub: github.com/yourusername</p>
+    <section id="contact" class="section">
+        <h2 class="section-title">
+            <span>Let's Connect</span>
+        </h2>
+        
+        <p class="contact-intro">
+            Feel free to reach out for collaboration or just a hello.
+        </p>
+        
+        <div class="contact-grid">
+            <a href="mailto:your@email.com" class="contact-card">
+                Email
+            </a>
+        
+            <a href="https://github.com/yourusername" class="contact-card">
+                GitHub
+            </a>
+        </div>
     </section>
     
     <div class="modal" id="project-modal">
