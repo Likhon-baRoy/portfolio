@@ -44,7 +44,38 @@
                 <span id="rotating-text"></span>
             </div>
 
-            <a href="#projects" class="btn">View My Work</a>
+            <a href="#about" class="hero-btn">
+                Explore My Work
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"></path>
+                </svg>
+            </a>
+            
+            <div class="hero-stats">
+
+                <div class="stat-card">
+                    <div class="stat-number cyan">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number purple">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number green">10+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number yellow">24/7</div>
+                    <div class="stat-label">Code Passion</div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
@@ -55,7 +86,7 @@
                 <span>About Me</span>
             </h2>
 
-            <div class="about-card">
+            <div class="about-card glow-card">
                 <blockquote>
                     “The quiet architect of systems and spirit.”
                 </blockquote>
@@ -80,7 +111,7 @@
                 <span>Tech Stack</span>
             </h2>
 
-            <div class="tech-grid skill-card">
+            <div class="tech-grid skill-card glow-card">
 
                 <div class="tech-item">
                     <i class="devicon-cplusplus-plain colored"></i>
@@ -182,20 +213,35 @@
                 <span>Experience</span>
             </h2>
 
-            <div class="experience-list">
+            <div class="experience-wrapper">
+                <div class="experience-card glow-card">
 
-                <div class="experience-card">
-                    <h3>Junior Software Developer</h3>
-                    <span class="experience-meta">
-                        Your Company • 2023 – Present
-                    </span>
-                    <ul>
-                        <li>Maintained ERP systems</li>
-                        <li>Optimized SQL queries</li>
-                        <li>Built reporting modules</li>
+                    <div class="experience-header">
+
+                        <div class="experience-title-group">
+                            <h3 class="experience-role">Project Manager</h3>
+                            <p class="experience-company">Global IT Solutions</p>
+                        </div>
+
+                        <div class="experience-meta">
+                            <p class="experience-duration">
+                                Jun 2023 – Aug 2023
+                            </p>
+                            <p class="experience-location">
+                                Dhaka, Bangladesh
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="experience-list">
+                        <li>
+                            Led cross-functional teams to deliver Vue.js and Laravel-based web solutions
+                        </li>
+                        <li>
+                            Focused on business logic modeling, backend API design, and e-commerce integration
+                        </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
@@ -244,7 +290,7 @@
             <div class="contact-grid">
 
                 <!-- Phone -->
-                <a href="tel:+8801581500678" class="contact-card">
+                <a href="tel:+8801581500678" class="contact-card glow-card">
                     <div class="contact-icon">
                         <!-- Phone SVG -->
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -257,7 +303,7 @@
                 </a>
 
                 <!-- Email -->
-                <a href="mailto:your@email.com" class="contact-card">
+                <a href="mailto:your@email.com" class="contact-card glow-card">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -270,7 +316,7 @@
                 </a>
 
                 <!-- GitHub -->
-                <a href="https://github.com/yourusername" target="_blank" class="contact-card">
+                <a href="https://github.com/yourusername" target="_blank" class="contact-card glow-card">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -283,7 +329,7 @@
                 </a>
 
                 <!-- Website -->
-                <a href="https://yourwebsite.com" target="_blank" class="contact-card">
+                <a href="https://yourwebsite.com" target="_blank" class="contact-card glow-card">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon w-8 h-8 text-blue-400 mx-auto mb-3 group-hover:scale-110 transition-transform" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                     </div>
