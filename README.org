@@ -1,0 +1,202 @@
+#+TITLE: Personal Portfolio Website
+#+AUTHOR: Likhon Baroy
+#+OPTIONS: toc:2 num:nil
+#+STARTUP: overview
+
+* Overview
+
+This is a modular, vanilla JavaScript personal portfolio website built with:
+
+- HTML5
+- Modular CSS architecture
+- ES Modules (Vanilla JS)
+- Intersection Observer
+- Clean component-based structure
+
+The project follows a separation-of-concerns architecture:
+- Layout
+- Components
+- Utilities
+- Initializer (main.js)
+
+No frameworks. No build tools. Fully deployable on GitHub Pages.
+
+---
+
+* Features
+
+- Sticky navigation header
+- Dark mode toggle (with persistence via localStorage)
+- Rotating hero headline text
+- Project slider with:
+  - Auto-slide
+  - Pause on hover
+  - Keyboard navigation
+  - Filter by tech stack
+  - Dynamic rendering from JSON
+- Modal for project details
+- Scroll reveal animation (Intersection Observer)
+- Responsive design
+- Modular CSS structure
+- Modular JavaScript architecture
+
+---
+
+* Project Structure
+
+#+BEGIN_SRC text
+portfolio/
+│
+├── index.html
+│
+├── assets/
+│   ├── images/
+│   │   ├── hero/
+│   │   ├── projects/
+│   │   └── icons/
+│   ├── fonts/
+│   └── favicon/
+│
+├── css/
+│   ├── base/
+│   │   ├── reset.css
+│   │   ├── variables.css
+│   │   └── typography.css
+│   │
+│   ├── layout/
+│   │   ├── header.css
+│   │   ├── sections.css
+│   │   └── footer.css
+│   │
+│   ├── components/
+│   │   ├── buttons.css
+│   │   ├── cards.css
+│   │   ├── hero.css
+│   │   ├── experience.css
+│   │   ├── projects.css
+│   │   ├── contact.css
+│   │   ├── modal.css
+│   │   ├── skills.css
+│   │   └── animations.css
+│   │
+│   └── main.css
+│
+├── js/
+│   ├── utils/
+│   │   ├── constants.js
+│   │   └── helpers.js
+│   │
+│   ├── components/
+│   │   ├── themeToggle.js
+│   │   ├── rotator.js
+│   │   ├── slider.js
+│   │   ├── modal.js
+│   │   └── scroll.js
+│   │
+│   └── main.js
+│
+├── projects.json
+│
+└── README.org
+#+END_SRC
+
+---
+
+* CSS Architecture
+
+**base/**
+- Global resets
+- CSS variables
+- Typography system
+
+**layout/**
+- Structural layout rules
+- Section spacing system
+- Header and footer
+
+**components/**
+- Self-contained UI systems
+- Cards, buttons, hero, slider, modal, etc.
+
+**main.css**
+- Imports all CSS modules in correct order
+
+---
+
+* JavaScript Architecture
+
+**utils/**
+- constants.js → shared timing values, word arrays
+- helpers.js → DOM query helpers
+
+**components/**
+- themeToggle.js → dark mode logic
+- rotator.js → hero rotating headline
+- slider.js → project slider system
+- modal.js → project details modal
+- scroll.js → scroll reveal animations
+
+**main.js**
+- Entry point
+- Initializes all modules on DOMContentLoaded
+
+---
+
+* How to Run
+
+Since ES modules are used, open with a local server:
+
+#+BEGIN_SRC bash
+npx serve
+#+END_SRC
+
+or use VSCode Live Server.
+
+Opening index.html directly via file:// will not work with modules.
+
+---
+
+* Deployment
+
+Deploy easily using GitHub Pages:
+
+1. Push repository to GitHub
+2. Go to Repository → Settings → Pages
+3. Set branch to main
+4. Save
+
+No build process required.
+
+---
+
+* Design Philosophy
+
+- Minimal
+- Structured
+- Premium without flash
+- Border highlight over glow
+- One focal gradient per section
+- Clean spacing rhythm
+- Readability first
+
+---
+
+* Future Improvements
+
+- Reduced motion support
+- Accessibility enhancements
+- Performance micro-optimizations
+- Timeline layout for experience section
+- Advanced slider transitions
+- SEO meta optimization
+
+---
+
+* License
+
+MIT License
+
+---
+
+© 2026 Likhon Baroy
+Built with clean architecture and vanilla JavaScript.

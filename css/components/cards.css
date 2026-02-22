@@ -1,0 +1,194 @@
+.skills-grid,
+.project-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.project-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.skill-card,
+.project-card {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .skill-card,
+body.dark .project-card {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* =====================================================
+   HERO STATS (Premium Glass)
+===================================================== */
+.stat-card {
+    padding: 1rem 2rem;
+    border-radius: 14px;
+    text-align: center;
+    width: 220px;
+    /* LIGHT MODE */
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* DARK MODE */
+body.dark .stat-card {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Subtle inner light edge */
+.stat-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+}
+
+/* STAT color variants */
+.cyan   { color: #22d3ee; }
+.purple { color: #a855f7; }
+.green  { color: #22c55e; }
+.yellow { color: #facc15; }
+
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+.about-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.05);
+    line-height: 1.8;
+}
+
+body.dark .about-card {
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.about-card blockquote {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+/* =====================================================
+   EXPERIENCE SECTION
+===================================================== */
+.experience-card {
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+body.dark .experience-card {
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* ================= PREMIUM BORDER LIGHT ================= */
+.glow-card {
+    position: relative;
+    transition: 
+        transform 0.35s cubic-bezier(.22,1,.36,1),
+        border-color 0.35s ease;
+}
+
+/* Base border */
+.glow-card {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body.dark .glow-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hover effect */
+.glow-card:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+/* Light mode premium border */
+.glow-card:hover {
+    border-color: rgba(37, 99, 235, 0.6);
+}
+
+/* Dark mode premium border */
+body.dark .glow-card:hover {
+    border-color: rgba(96, 165, 250, 0.7);
+}
+
+.glow-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.6),
+        rgba(147, 51, 234, 0.6)
+    );
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.glow-card:hover::after {
+    opacity: 1;
+}
+
+/* Dark mode slightly stronger */
+body.dark .glow-card::after {
+    background: linear-gradient(
+        135deg,
+        rgba(96, 165, 250, 0.8),
+        rgba(168, 85, 247, 0.8)
+    );
+}

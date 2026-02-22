@@ -1,0 +1,75 @@
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Left Group */
+.experience-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Role */
+.experience-role {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+/* Company */
+.experience-company {
+    font-weight: 500;
+    color: #3b82f6;
+}
+
+/* Duration */
+.experience-meta {
+    text-align: right;
+}
+
+.experience-duration {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.experience-location {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+}
+
+/* Bullet List */
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Custom Bullet */
+.experience-list li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #3b82f6;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.experience-wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+}
