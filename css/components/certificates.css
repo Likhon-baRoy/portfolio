@@ -1,0 +1,158 @@
+/* ============================
+   Certificates Section
+============================ */
+
+.cert-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.cert-slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 720px;
+}
+
+.cert-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(.22,1,.36,1);
+}
+
+.cert-card {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* ============================
+   Certificate Frame (Sharp)
+============================ */
+
+.cert-frame {
+    position: relative;
+    background: var(--white);
+    padding: 28px;
+    border-radius: 0 !important;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    max-width: 100%;
+    overflow: visible;
+}
+
+body.dark .cert-frame {
+    background: var(--card-bg);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+}
+
+.cert-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0 !important;
+}
+
+/* ============================
+   Premium 3D Corner |_ Design
+============================ */
+
+.cert-frame::before,
+.cert-frame::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    z-index: 3;              /* ensures always above image */
+    pointer-events: none;    /* prevents hover interference */
+}
+
+/* Top-left */
+.cert-frame::before {
+    top: 14px;
+    left: 14px;
+    border-top: 4px solid #3b82f6;
+    border-left: 4px solid #3b82f6;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.12);
+}
+
+/* Bottom-right */
+.cert-frame::after {
+    bottom: 14px;
+    right: 14px;
+    border-bottom: 4px solid #9333ea;
+    border-right: 4px solid #9333ea;
+    box-shadow: -2px -2px 0 rgba(0,0,0,0.12);
+}
+
+/* Dark mode */
+body.dark .cert-frame::before {
+    border-top-color: #60a5fa;
+    border-left-color: #60a5fa;
+    box-shadow: 2px 2px 0 #0f172a;   /* darker depth for contrast */
+}
+
+body.dark .cert-frame::after {
+    border-bottom-color: #c084fc;
+    border-right-color: #c084fc;
+    box-shadow: -2px -2px 0 #0f172a;
+}
+
+/* ============================
+   Meta
+============================ */
+
+.cert-meta {
+    text-align: center;
+}
+
+.cert-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.cert-issuer {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.cert-counter {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* ============================
+   Navigation
+============================ */
+
+.cert-prev {
+    left: -24px;
+    position: absolute;
+}
+
+.cert-next {
+    right: -24px;
+    position: absolute;
+}
+
+/* ============================
+   Clickable Hover
+============================ */
+
+.cert-frame a {
+    display: block;
+    cursor: pointer;
+}
+
+.cert-frame a img {
+    transition: transform 0.35s ease;
+}
+
+.cert-frame a:hover img {
+    transform: scale(1.02);
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Problem Solving (Basic) Certificate",
+    "issuer": "HackerRank",
+    "year": "2026",
+    "image": "assets/images/certificates/problem_solving_basic.png",
+    "link": "https://www.hackerrank.com/certificates/iframe/6a8ce697648b"
+  },
+  {
+    "title": "SQL (Basic) Certificate",
+    "issuer": "HackerRank",
+    "year": "2026",
+    "image": "assets/images/certificates/sql_basic.png",
+    "link": "https://www.hackerrank.com/certificates/iframe/9eadfcd2934b"
+  },
+  {
+    "title": "Foundational C# with Microsoft Certification Exam",
+    "issuer": "Microsoft & freeCodeCamp",
+    "year": "2025",
+    "image": "assets/images/certificates/foundational_csharp.png",
+    "link": "https://www.freecodecamp.org/certification/likhon007/foundational-c-sharp-with-microsoft"
+  }
+]

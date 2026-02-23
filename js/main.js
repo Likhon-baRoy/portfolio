@@ -3,6 +3,7 @@ import { initRotator } from "./components/rotator.js";
 import { initSlider } from "./components/slider.js";
 import { initModal } from "./components/modal.js";
 import { initScrollReveal } from "./components/scroll.js";
+import { initCertificates } from "./components/certificates.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     initThemeToggle();
@@ -10,4 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
     initSlider();
     initModal();
     initScrollReveal();
+    initCertificates();
 });
