@@ -1,97 +1,58 @@
-import { SLIDER_INTERVAL } from "../utils/constants.js";
-
 export function initSlider() {
+
     const track = document.querySelector(".project-track");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector("#projects .prev");
+    const nextBtn = document.querySelector("#projects .next");
     const dotsContainer = document.querySelector(".slider-dots");
-    const filterButtons = document.querySelectorAll(".filter-btn");
 
     if (!track) return;
 
-    let allProjects = [];
-    let filteredProjects = [];
+    let projects = [];
     let currentIndex = 0;
-    let interval;
 
-    // Fetch projects
     fetch("projects.json")
         .then(res => res.json())
         .then(data => {
-            allProjects = data;
-            filteredProjects = data;
-            renderProjects(filteredProjects);
-            startAutoSlide();
-            
-            const sliderWrapper = document.querySelector(".project-slider-wrapper");
-
-            sliderWrapper?.addEventListener("mouseenter", () => {
-                clearInterval(interval);
-            });
-
-            sliderWrapper?.addEventListener("mouseleave", () => {
-                startAutoSlide();
-            });
+            projects = data;
+            renderProjects();
+            updateSlider();
         });
 
-    function renderProjects(projects) {
+    function renderProjects() {
         track.innerHTML = "";
+        dotsContainer.innerHTML = "";
 
-        projects.forEach(project => {
-            const techBadges = project.tech
-                ? project.tech.map(t => `<span class="badge">${t}</span>`).join("")
-                : "";
+        projects.forEach((project, index) => {
 
             const card = document.createElement("div");
-            card.className = "project-card hidden";
-
-            // Attach full details to card
-            card.dataset.details = project.details || "No additional details available.";
-            card.dataset.title = project.title;
+            card.className = "project-card";
 
             card.innerHTML = `
                 <div class="project-image">
-                    ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ""}
-                    <div class="overlay">
-                        <button class="view-details">View Details</button>
-                    </div>
+                    <img src="${project.image}" alt="${project.title}">
                 </div>
-
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-
-                <div class="tech-badges">${techBadges}</div>
-
-                <div class="project-links">
-                    ${project.github ? `<a href="${project.github}" target="_blank" class="project-btn">GitHub</a>` : ""}
-                    ${project.demo ? `<a href="${project.demo}" target="_blank" class="project-btn outline">Live</a>` : ""}
+                <div class="project-content">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
                 </div>
             `;
 
             track.appendChild(card);
-        });
 
-        createDots(projects.length);
-        updateSlider();
+            const dot = document.createElement("span");
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                updateSlider();
+            });
+
+            dotsContainer.appendChild(dot);
+        });
     }
 
     function updateSlider() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
         updateDots();
-    }
-
-    function createDots(count) {
-        dotsContainer.innerHTML = "";
-        for (let i = 0; i < count; i++) {
-            const dot = document.createElement("span");
-            dot.addEventListener("click", () => {
-                currentIndex = i;
-                updateSlider();
-                resetAutoSlide();
-            });
-            dotsContainer.appendChild(dot);
-        }
-        updateDots();
+        updateButtons();
     }
 
     function updateDots() {
@@ -101,60 +62,61 @@ export function initSlider() {
         });
     }
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % filteredProjects.length;
-        updateSlider();
-    }
+    function updateButtons() {
+        if (!prevBtn || !nextBtn) return;
 
-    function prevSlide() {
-        currentIndex =
-            (currentIndex - 1 + filteredProjects.length) % filteredProjects.length;
-        updateSlider();
-    }
+        const isFirst = currentIndex === 0;
+        const isLast = currentIndex === projects.length - 1;
 
-    function startAutoSlide() {
-        interval = setInterval(nextSlide, SLIDER_INTERVAL);
-    }
+        prevBtn.disabled = isFirst;
+        nextBtn.disabled = isLast;
 
-    function resetAutoSlide() {
-        clearInterval(interval);
-        startAutoSlide();
+        prevBtn.classList.toggle("disabled", isFirst);
+        nextBtn.classList.toggle("disabled", isLast);
     }
-
-    nextBtn?.addEventListener("click", () => {
-        nextSlide();
-        resetAutoSlide();
-    });
 
     prevBtn?.addEventListener("click", () => {
-        prevSlide();
-        resetAutoSlide();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
     });
 
-    document.addEventListener("keydown", e => {
-        if (e.key === "ArrowRight") nextSlide();
-        if (e.key === "ArrowLeft") prevSlide();
+    nextBtn?.addEventListener("click", () => {
+        if (currentIndex < projects.length - 1) {
+            currentIndex++;
+            updateSlider();
+        }
     });
 
-    // FILTER FIX
-    filterButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const filter = btn.dataset.filter;
+    /* KEYBOARD (restricted visibility) */
 
-            filterButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
+    document.addEventListener("keydown", (e) => {
 
-            if (filter === "all") {
-                filteredProjects = allProjects;
-            } else {
-                filteredProjects = allProjects.filter(project =>
-                    project.tech?.includes(filter)
-                );
-            }
+        const section = document.getElementById("projects");
+        if (!section) return;
 
-            currentIndex = 0;
-            renderProjects(filteredProjects);
-            resetAutoSlide();
-        });
+        if (!isSectionMostlyVisible(section)) return;
+
+        if (e.key === "ArrowRight" && currentIndex < projects.length - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+
+        if (e.key === "ArrowLeft" && currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
     });
+
+    function isSectionMostlyVisible(section) {
+        const rect = section.getBoundingClientRect();
+        const visibleHeight =
+            Math.min(rect.bottom, window.innerHeight) -
+            Math.max(rect.top, 0);
+
+        const visibilityRatio = visibleHeight / rect.height;
+
+        return visibilityRatio >= 0.6;
+    }
 }
