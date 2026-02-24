@@ -145,7 +145,16 @@ body.dark .glow-card {
 }
 
 /* Hover effect */
-.glow-card:hover {
+/* .glow-card:hover {
+    transform: translateY(-6px) scale(1.01);
+} */
+
+/* Motion utility */
+.card-lift {
+    transition: transform 0.3s ease;
+}
+
+.card-lift:hover {
     transform: translateY(-6px) scale(1.01);
 }
 
