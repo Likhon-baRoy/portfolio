@@ -126,10 +126,17 @@ export function initSlider() {
 
     function startAutoSlide() {
         interval = setInterval(() => {
+
+            if (filteredProjects.length <= 1) return;
+
             if (currentIndex < filteredProjects.length - 1) {
                 currentIndex++;
-                updateSlider();
+            } else {
+                currentIndex = 0;   // loop back to start
             }
+
+            updateSlider();
+
         }, 5000);
     }
 
