@@ -4,32 +4,51 @@ export function initSlider() {
     const prevBtn = document.querySelector("#projects .prev");
     const nextBtn = document.querySelector("#projects .next");
     const dotsContainer = document.querySelector(".slider-dots");
+    const filterButtons = document.querySelectorAll(".filter-btn");
 
     if (!track) return;
 
     let projects = [];
+    let filteredProjects = [];
     let currentIndex = 0;
+    let interval;
+
+    /* ============================
+       FETCH PROJECTS
+    ============================ */
 
     fetch("projects.json")
         .then(res => res.json())
         .then(data => {
             projects = data;
+            filteredProjects = data;
             renderProjects();
-            updateSlider();
+            startAutoSlide();
         });
+
+    /* ============================
+       RENDER
+    ============================ */
 
     function renderProjects() {
         track.innerHTML = "";
         dotsContainer.innerHTML = "";
 
-        projects.forEach((project, index) => {
+        filteredProjects.forEach((project, index) => {
 
             const card = document.createElement("div");
             card.className = "project-card";
+            card.dataset.title = project.title;
+            card.dataset.details = project.details || "";
 
             card.innerHTML = `
                 <div class="project-image">
                     <img src="${project.image}" alt="${project.title}">
+                    <div class="overlay">
+                        <button class="view-details" data-index="${index}">
+                            View Details
+                        </button>
+                    </div>
                 </div>
                 <div class="project-content">
                     <h3>${project.title}</h3>
@@ -43,11 +62,19 @@ export function initSlider() {
             dot.addEventListener("click", () => {
                 currentIndex = index;
                 updateSlider();
+                resetAutoSlide();
             });
 
             dotsContainer.appendChild(dot);
         });
+
+        currentIndex = 0;
+        updateSlider();
     }
+
+    /* ============================
+       SLIDER UPDATE
+    ============================ */
 
     function updateSlider() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -63,10 +90,8 @@ export function initSlider() {
     }
 
     function updateButtons() {
-        if (!prevBtn || !nextBtn) return;
-
         const isFirst = currentIndex === 0;
-        const isLast = currentIndex === projects.length - 1;
+        const isLast = currentIndex === filteredProjects.length - 1;
 
         prevBtn.disabled = isFirst;
         nextBtn.disabled = isLast;
@@ -75,21 +100,75 @@ export function initSlider() {
         nextBtn.classList.toggle("disabled", isLast);
     }
 
+    /* ============================
+       NAVIGATION
+    ============================ */
+
     prevBtn?.addEventListener("click", () => {
         if (currentIndex > 0) {
             currentIndex--;
             updateSlider();
+            resetAutoSlide();
         }
     });
 
     nextBtn?.addEventListener("click", () => {
-        if (currentIndex < projects.length - 1) {
+        if (currentIndex < filteredProjects.length - 1) {
             currentIndex++;
             updateSlider();
+            resetAutoSlide();
         }
     });
 
-    /* KEYBOARD (restricted visibility) */
+    /* ============================
+       AUTO SLIDE
+    ============================ */
+
+    function startAutoSlide() {
+        interval = setInterval(() => {
+            if (currentIndex < filteredProjects.length - 1) {
+                currentIndex++;
+                updateSlider();
+            }
+        }, 5000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(interval);
+        startAutoSlide();
+    }
+
+    track.addEventListener("mouseenter", () => clearInterval(interval));
+    track.addEventListener("mouseleave", startAutoSlide);
+
+    /* ============================
+       FILTER SYSTEM
+    ============================ */
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            if (filter === "all") {
+                filteredProjects = projects;
+            } else {
+                filteredProjects = projects.filter(project =>
+                    project.tech?.includes(filter)
+                );
+            }
+
+            renderProjects();
+            resetAutoSlide();
+        });
+    });
+
+    /* ============================
+       KEYBOARD (Visibility Controlled)
+    ============================ */
 
     document.addEventListener("keydown", (e) => {
 
@@ -98,7 +177,7 @@ export function initSlider() {
 
         if (!isSectionMostlyVisible(section)) return;
 
-        if (e.key === "ArrowRight" && currentIndex < projects.length - 1) {
+        if (e.key === "ArrowRight" && currentIndex < filteredProjects.length - 1) {
             currentIndex++;
             updateSlider();
         }
