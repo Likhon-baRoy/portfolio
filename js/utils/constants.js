@@ -1,8 +1,8 @@
 export const ROTATOR_WORDS = [
-    "Enterprise Systems",
-    "Scalable APIs",
-    "ERP Solutions",
-    "Modern Web Apps"
+    "Backend Systems",
+    "Enterprise Applications",
+    "Clean Architecture",
+    "Scalable Software"
 ];
 
 export const ROTATOR_INTERVAL = 4000;
