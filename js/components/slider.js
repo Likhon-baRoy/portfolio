@@ -45,14 +45,40 @@ export function initSlider() {
                 <div class="project-image">
                     <img src="${project.image}" alt="${project.title}">
                     <div class="overlay">
-                        <button class="view-details" data-index="${index}">
+                        <button class="view-details">
                             View Details
                         </button>
                     </div>
                 </div>
+
                 <div class="project-content">
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
+
+                    <div class="tech-badges">
+                        ${project.tech
+                            ? project.tech.map(tech =>
+                                `<span class="badge">${tech}</span>`
+                            ).join("")
+                            : ""
+                        }
+                    </div>
+
+                    <div class="project-links">
+                        ${project.github
+                            ? `<a href="${project.github}" target="_blank" class="project-btn">
+                                    GitHub
+                            </a>`
+                            : ""
+                        }
+
+                        ${project.demo
+                            ? `<a href="${project.demo}" target="_blank" class="project-btn outline">
+                                    Live
+                            </a>`
+                            : ""
+                        }
+                    </div>
                 </div>
             `;
 

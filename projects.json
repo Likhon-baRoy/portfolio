@@ -1,5 +1,21 @@
 [
   {
+    "title": "Full-Stack Dating Application",
+    "description": "<i>This is a full-stack dating application built with modern web technologies.</i>",
+    "tech": [".NET Core", "Angular", "Web API", "Entity Framework"],
+    "github": "https://github.com/Likhon-baRoy/DatingApp",
+    "image": "assets/images/projects/dating-app.png",
+    "details": "Developed a comprehensive dating application following industry best practices using ASP.NET Core 9.0 Web API backend with Angular frontend, implementing clean architecture principles."
+  },
+  {
+    "title": "GNU Emacs Configuration",
+    "description": "<i>This is an Emacs distribution that aims to enhance the default Emacs experience.</i>",
+    "tech": ["Emacs Lisp", "Lisp", "others"],
+    "github": "https://github.com/Likhon-baRoy/.emacs.d",
+    "image": "assets/images/projects/emacs.png",
+    "details": "This repository contains my personal configuration for GNU Emacs that I use on the daily and port around from system to system with me. This is an example of a fully customizable Emacs configuration that you can use as an inspiration when building your own!"
+  },
+  {
     "title": "ERP Module Demo",
     "description": "Custom module built using CodeIgniter and MySQL.",
     "tech": ["PHP", "CodeIgniter", "MySQL"],
@@ -10,18 +26,37 @@
   },
   {
     "title": "University Hall Management System",
-    "description": "🏨 A Hall Management System made originally for University based on PHP, Laravel 11, HTML5, CSS3, JS, MySQL etc.",
+    "description": "A Hall Management System made originally for University based on PHP, Laravel 11, HTML5, CSS3, JS, MySQL etc.",
     "tech": ["Laravel", "PHP", "MySQL"],
     "github": "https://github.com/Likhon-baRoy/Hall-Management-System",
-    "demo": "https://github.com/Likhon-baRoy/Hall-Management-System",
     "image": "assets/images/hall.png",
     "details": "This is a project of a dormitory management system website designed to improve the efficiency and effectiveness of managing dormitories or student housing."
   },
   {
-    "title": "Task Manager",
-    "description": "Vanilla JavaScript task management application.",
+    "title": "Password Generator",
+    "description": "A simple random password generator built with JavaScript.",
     "tech": ["JavaScript", "LocalStorage", "DOM"],
-    "github": "https://github.com/yourusername/task-manager",
-    "demo": "https://your-demo-link.com"
+    "github": "https://github.com/Likhon-baRoy/passwordGenerator",
+    "demo": "https://htmlpreview.github.io/?https://github.com/Likhon-baRoy/passwordGenerator/blob/main/index.html",
+    "image": "assets/images/projects/password-generator.png",
+    "details": "This is a simple random password generator built with JavaScript. It allows users to generate secure passwords based on their preferences, such as length and character types (uppercase, lowercase, numbers, symbols). The generated passwords can be easily copied to the clipboard for use in various applications."
+  },
+  {
+    "title": "Lead Tracker Browser Extension",
+    "description": "Browser extention that keeps track of leads and manage them in a simple way.",
+    "tech": ["JavaScript", "LocalStorage", "DOM"],
+    "github": "https://github.com/Likhon-baRoy/Lead-Tracker",
+    "demo": "https://leadtreacker.netlify.app",
+    "image": "assets/images/projects/leadtracker.png",
+    "details": "This is a simple JS browser extention that leads the trackers to track their leads and manage them in a simple way."
+  },
+  {
+    "title": "Simple Basketball Scoreboard Game",
+    "description": "A simple browser-based basketball game built with  JS for learning purposes.",
+    "tech": ["JavaScript", "HTML5", "CSS3"],
+    "github": "https://github.com/Likhon-baRoy/myJS",
+    "demo": "https://basketball-js-likhon.netlify.app/",
+    "image": "assets/images/projects/basketball.png",
+    "details": "This is a simple basketball scoreboard game built with HTML5, CSS3, and JavaScript. It allows users to keep track of the score for two teams, incrementing points for 1, 2, or 3 points as they are scored. The game also includes a reset button to start a new game. This project demonstrates basic DOM manipulation and event handling in JavaScript."
   }
 ]

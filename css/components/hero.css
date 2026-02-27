@@ -93,3 +93,7 @@ body.dark #rotating-text::after {
     margin-left: auto;
     margin-right: auto;
 }
+
+.name-highlight {
+    font-weight: 900;
+}
