@@ -162,28 +162,25 @@ body.dark .cert-frame::after {
 ============================ */
 @media (max-width: 768px) {
 
-    .cert-slider {
-        max-width: 95%;
-        margin: 0 auto;
-    }
-
-    .cert-card {
-        padding: 1rem;
-    }
-
     .cert-frame {
-        padding: 16px;
+        padding: 18px;
     }
-
+    
+    .cert-slider {
+        max-width: 100%;
+        width: 100%;
+    }
+    
     .cert-frame img {
         width: 100%;
         height: auto;
+        display: block;
     }
 
     .cert-frame::before,
     .cert-frame::after {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         border-width: 3px;
     }
 }

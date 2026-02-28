@@ -140,22 +140,28 @@ body.dark .badge {
         margin-top: 1rem;
     }
 
-    .project-slider-wrapper {
+    /* ============================
+       PROJECT SLIDER ARROWS FIX
+    ============================ */
+
+    #projects .project-slider-wrapper {
         position: relative;
     }
 
-    .nav-btn {
+    #projects .nav-btn {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
+        /* transform: translateY(-50%); */
+        width: 42px;
+        height: 42px;
+        z-index: 30;
     }
 
-    .prev {
-        left: 10px;   /* inside instead of negative */
+    #projects .prev {
+        left: 8px;
     }
 
-    .next {
-        right: 10px;
+    #projects .next {
+        right: 8px;
     }
 }

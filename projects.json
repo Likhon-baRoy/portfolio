@@ -16,14 +16,13 @@
     "details": "This repository contains my personal configuration for GNU Emacs that I use on the daily and port around from system to system with me. This is an example of a fully customizable Emacs configuration that you can use as an inspiration when building your own!"
   },
   {
-    "title": "ERP Module Demo",
-    "description": "Custom module built using CodeIgniter and MySQL.",
-    "tech": ["PHP", "CodeIgniter", "MySQL"],
-    "github": "https://github.com/yourusername/erp-demo",
-    "demo": "https://your-demo-link.com",
-    "image": "assets/images/erp.png",
-    "details": "This module handles member booking, payments, reporting and ERP integration logic."
-  },
+    "title": "Neways3 International ERP",
+    "description": "<i>Developed for Neways International Company to manage large-scale multi-branch Super Hostel operations across BD.</i>",
+    "tech": ["PHP", "CodeIgniter", "JavaScript", "AJAX", "MySQL", "REST API", "Nginx"],
+    "demo": "https://erp.neways3.com",
+    "image": "assets/images/projects/neways3-erp.png",
+    "details": "Designed and developed a centralized enterprise ERP system to digitize and streamline operational workflows across multiple hostel branches under the Super Hostel network. The system manages core business modules including HRM, CRM, Accounts & Finance, Supply Chain Management (SCM), Warehouse Operations, and Employee Administration.\n\nImplemented role-based access control, department-wise approval workflows, and automated requisition processing to reduce manual operational overhead. Developed dynamic AJAX-driven interfaces for real-time data interaction and optimized MySQL queries for handling large organizational datasets.\n\nIntegrated employee attendance management with biometric/facial recognition verification connected directly with ERP records. The platform enables centralized monitoring, reporting, and coordination between headquarters and distributed branches.\n\nFocused on performance optimization, scalable database structure, and secure backend architecture using the CodeIgniter framework deployed on Nginx production servers."
+},
   {
     "title": "University Hall Management System",
     "description": "A dormitory management system website designed to improve the efficiency and effectiveness of managing dormitories or student housing.",
