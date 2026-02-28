@@ -140,13 +140,22 @@ body.dark .badge {
         margin-top: 1rem;
     }
 
-    .nav-btn {
-        width: 40px;
-        height: 40px;
+    .project-slider-wrapper {
+        position: relative;
     }
 
-    .project-btn {
-        padding: 0.5rem 0.9rem;
-        font-size: 0.8rem;
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .prev {
+        left: 10px;   /* inside instead of negative */
+    }
+
+    .next {
+        right: 10px;
     }
 }

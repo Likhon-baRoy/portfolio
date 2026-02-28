@@ -186,7 +186,7 @@ body.dark .nav-btn {
 .nav-btn.disabled {
     opacity: 0.35;
     cursor: not-allowed;
-    transform: none !important;
+    pointer-events: none;
 }
 
 .prev {
