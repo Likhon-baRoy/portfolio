@@ -26,11 +26,11 @@
   },
   {
     "title": "University Hall Management System",
-    "description": "A Hall Management System made originally for University based on PHP, Laravel 11, HTML5, CSS3, JS, MySQL etc.",
-    "tech": ["Laravel", "PHP", "MySQL"],
+    "description": "A dormitory management system website designed to improve the efficiency and effectiveness of managing dormitories or student housing.",
+    "tech": ["Laravel", "PHP", "JavaScript", "AJAX", "MySQL"],
     "github": "https://github.com/Likhon-baRoy/Hall-Management-System",
-    "image": "assets/images/hall.png",
-    "details": "This is a project of a dormitory management system website designed to improve the efficiency and effectiveness of managing dormitories or student housing."
+    "image": "assets/images/projects/hall-laravel.jpg",
+    "details": "This project is a dormitory management system website designed to improve the efficiency and effectiveness of managing dormitories or student housing. It provides features such as student registration, room allocation, fee management, and reporting. The system is built using Laravel for the backend, PHP for server-side scripting, JavaScript and AJAX for dynamic interactions, and MySQL for database management."
   },
   {
     "title": "Password Generator",
