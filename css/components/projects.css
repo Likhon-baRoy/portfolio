@@ -122,3 +122,31 @@ body.dark .badge {
     background: var(--primary-color);
     transform: scale(1.4);
 }
+
+/* ============================
+   Responsive Adjustments
+============================ */
+@media (max-width: 768px) {
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 1rem;
+    }
+    
+    .project-links {
+        margin-top: 1rem;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .project-btn {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}

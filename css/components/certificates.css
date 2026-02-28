@@ -156,3 +156,20 @@ body.dark .cert-frame::after {
 .cert-frame a:hover img {
     transform: scale(1.02);
 }
+
+/* ============================
+   Responsive Adjustments
+============================ */
+@media (max-width: 768px) {
+
+    .cert-frame {
+        padding: 18px;
+    }
+
+    .cert-frame::before,
+    .cert-frame::after {
+        width: 45px;
+        height: 45px;
+        border-width: 3px;
+    }
+}

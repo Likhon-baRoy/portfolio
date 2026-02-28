@@ -32,3 +32,20 @@ body.dark .section.alt {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* ============================
+   Responsive Adjustments
+============================ */
+@media (max-width: 768px) {
+
+    .section {
+        padding: 4rem 1.5rem;
+    }
+    
+    #projects,
+    #experience,
+    #certificates {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+}

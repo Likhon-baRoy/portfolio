@@ -109,3 +109,42 @@ body.dark stop:first-child {
 body.dark stop:last-child {
     stop-color: #c084fc;
 }
+
+/* ============================
+   Mobile Navigation
+============================ */
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Tablet & below */
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        width: 220px;
+        display: none;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    body.dark .nav-links {
+        background: #1f2937;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
