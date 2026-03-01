@@ -19,5 +19,12 @@
     "year": "2025",
     "image": "assets/images/certificates/foundational_csharp.png",
     "link": "https://www.freecodecamp.org/certification/likhon007/foundational-c-sharp-with-microsoft"
+  },
+  {
+    "title": "Grace Hopper Programming Camp Certificate",
+    "issuer": "BDOSN",
+    "year": "2022",
+    "image": "assets/images/certificates/grace_hopper_prog_camp.png",
+    "link": "https://drive.google.com/file/d/1BXu0eOcDiTeXAwUVQmO-d8HeVmpdxlOp/view?usp=sharing"
   }
 ]
