@@ -1,11 +1,11 @@
 [
   {
     "title": "Full-Stack Dating Application",
-    "description": "<i>This is a full-stack dating application built with modern web technologies.</i>",
-    "tech": [".NET Core", "Angular", "Web API", "Entity Framework"],
+    "description": "<i>Build an app with ASPNET Core and Angular from scratch</i>",
+    "tech": [".NET Core", "Angular", "WebAPI", "Entity Framework", "RESTful APIs", "SignalR"],
     "github": "https://github.com/Likhon-baRoy/DatingApp",
     "image": "assets/images/projects/dating-app.png",
-    "details": "Developed a comprehensive dating application following industry best practices using ASP.NET Core 9.0 Web API backend with Angular frontend, implementing clean architecture principles."
+    "details": "Developed a comprehensive dating application following industry best practices using ASP.NET Core 9.0 Web API backend with Angular frontend, implementing clean architecture principles. Adding a Private Messaging system to the app. Implemented real-time communication using SignalR for instant messaging between users. Designed and implemented a robust RESTful API with secure authentication and authorization using JWT tokens. Utilized Entity Framework Core for efficient database management and LINQ for complex data querying. The application features user registration, profile management, photo uploads, and a matching algorithm based on user preferences."
   },
   {
     "title": "GNU Emacs Configuration",
